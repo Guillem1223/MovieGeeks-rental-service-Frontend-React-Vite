@@ -1,0 +1,74 @@
+.backgroundHome {
+  width: 100%;
+  height: 100%;
+}
+.homeCard {
+  background-color: rgba(231, 222, 222, 0.685);
+  display: flex;
+  justify-content: center;
+
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 150px;
+  left: 30%;
+  border-radius: 15%;
+}
+.form {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.47);
+  border-radius: 15%;
+}
+.buttons {
+  position: relative;
+  margin: 10px;
+  left: 50%;
+  border-radius: 15%;
+  border-color: #0d6efd;
+  background-color: white;
+  color: white;
+  height: 40px;
+}
+.form-text-error {
+  color: var(--bs-danger) !important;
+  font-size: 100%;
+}
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @media screen and (max-width: 450px) {
+//   .homeCard {
+//     position: absolute;
+//     left: 400px;
+//     top: 60px;
+//     width: 300px;
+//     height: 300px;
+//   }
+
+//   .home {
+//     width: 1000px;
+//   }
+//   .backgroundHome {
+//     width: 10px;
+//     height: 80px;
+//   }
+// }
+
+// @media screen and (max-width: 1000px) {
+//   .homeCard {
+//     position: absolute;
+//     left: 20%;
+//     top: 300px;
+//   }
+
+//   .home {
+//     width: 1650px;
+//   }
+// }

@@ -1,0 +1,25 @@
+.popularMovies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+}
+// .posters {
+//   width: 250px;
+//   height: 350px;
+// }
+.titles {
+  width: 185px;
+}
+.voteAverage {
+  background-color: green;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+}
+.titlePopularMovies {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}

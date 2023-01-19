@@ -1,0 +1,30 @@
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleDetails {
+  display: flex;
+  justify-content: center;
+}
+.backdrop {
+  position: relative;
+  filter: blur(0px);
+  background: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  color: white;
+}
+.backdrop_path {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute !important;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  filter: blur(5px);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  transform: scale(1.1);
+}
