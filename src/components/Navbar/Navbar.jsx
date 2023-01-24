@@ -80,6 +80,11 @@ export default function Navbar() {
                     Movies
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink to="/users/:id" className="nav-link" href="#">
+                    User Rents
+                  </NavLink>
+                </li>
 
                 <li className="nav-item dropdown">
                   <a

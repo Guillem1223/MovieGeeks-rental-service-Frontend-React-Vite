@@ -30,32 +30,44 @@ export default function Admin() {
     await getAllUsers(token);
     console.log(users);
   };
+  const baseUrlImg = "https://image.tmdb.org/t/p/w185";
+
+  const userRentMovies = (movies) => {
+    return movies.map((movie) => {
+      console.log(movie.poster);
+      return <img src={baseUrlImg + movie.poster} alt="" />;
+    });
+  };
+  const userDetails = users.map((user) => {
+    console.log(user);
+    return (
+      <div key={user._id}>
+        <ol>
+          <li>{user.name}</li>
+          <li>{user.email}</li>
+          <li>{user.password}</li>
+          <li>{user.role}</li>
+          <li>{userRentMovies(user.movies)}</li>
+        </ol>
+        <div className="admin-buttons">
+          <button
+            onClick={() => {
+              handleDelete(user);
+            }}
+            className="delete-user"
+          >
+            borrar
+          </button>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <div>
       <h2 className="titleAdmin">Admin panel</h2>
       <hr />
-      <div>
-        {users.map((user) => (
-          <div key={user._id}>
-            <ol>
-              <li>{user.name}</li>
-              <li>{user.email}</li>
-              <li>{user.password}</li>
-              <li>{user.role}</li>
-            </ol>
-            <div className="admin-buttons">
-              <button
-                onClick={() => {
-                  handleDelete(user);
-                }}
-                className="delete-user"
-              >
-                borrar
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      <div>{userDetails}</div>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

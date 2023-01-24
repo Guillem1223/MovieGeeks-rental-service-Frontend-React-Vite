@@ -11,13 +11,28 @@ UserService.getAllUsers = async (token) => {
 
   return await axios.get(apiUrl, config);
 };
+UserService.getUserById = async (userId) => {
+  const apiUrl = `${enviroment.BASE_API_URL}/users/${userId}`;
 
-UserService.rentMovie = async (userId, movieId) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
+  return await axios.get(apiUrl, config);
+};
+
+UserService.rentMovie = async (userId, details) => {
   try {
     console.log(userId);
-    console.log(movieId);
-    const apiURL = `${enviroment.BASE_API_URL}/users/users/${userId}/rent/${movieId}`;
-    const res = await axios.patch(apiURL, movieId);
+
+    const movieDetails = {
+      id: details.id,
+      title: details.title,
+      vote: details.vote_average,
+      poster: details.poster_path,
+    };
+    const apiURL = `${enviroment.BASE_API_URL}/users/users/${userId}/rent/${details.id}`;
+    const res = await axios.patch(apiURL, movieDetails);
 
     return res.data;
   } catch (error) {
@@ -26,7 +41,7 @@ UserService.rentMovie = async (userId, movieId) => {
 };
 UserService.deleteMovie = async (userId, movieId) => {
   try {
-    const apiURL = `${enviroment.BASE_URL}/users/users/${userId}/delete/${movieId}`;
+    const apiURL = `${enviroment.BASE_API_URL}/users/users/${userId}/delete/${movieId}`;
     const res = await axios.patch(apiURL, movieId);
 
     return res.data;

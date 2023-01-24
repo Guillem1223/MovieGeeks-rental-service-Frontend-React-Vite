@@ -12,7 +12,7 @@ export function MovieDetails() {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const token = TokenStorageService.getToken();
+  // const token = TokenStorageService.getToken();
 
   useEffect(() => {
     getDetails(id);
@@ -46,7 +46,7 @@ export function MovieDetails() {
     const userId = sessionStorage.getItem("userId");
 
     console.log(userId);
-    await UserService.rentMovie(userId, id);
+    await UserService.rentMovie(userId, details);
     navigate("/movies");
   };
   const baseUrlImg = "https://image.tmdb.org/t/p/w400/";

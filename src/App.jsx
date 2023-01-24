@@ -22,6 +22,7 @@ import Signup from "./containers/SignUp/Signup";
 import { Payment } from "./containers/Payment/Payment";
 import MovieDetails from "./containers/MovieDetails/MovieDetails";
 import Admin from "./containers/Admin/Admin";
+import { User } from "./containers/User/User";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/signup/payment" element={<Payment />} />
+          <Route path="/users/:id" element={<User />} />
           <Route path="/movies" element={<PopularMovies />} />
           <Route path="/movies/:id" element={<MovieDetails />} />
           <Route path="/admin" element={<Admin />} />
