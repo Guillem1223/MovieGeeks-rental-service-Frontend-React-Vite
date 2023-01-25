@@ -14,11 +14,7 @@ UserService.getAllUsers = async (token) => {
 UserService.getUserById = async (userId) => {
   const apiUrl = `${enviroment.BASE_API_URL}/users/${userId}`;
 
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-
-  return await axios.get(apiUrl, config);
+  return await axios.get(apiUrl);
 };
 
 UserService.rentMovie = async (userId, details) => {
